@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Weather, Погода">
+    <title>Weather</title>
+    <link rel="icon" href="img/heavy-rain.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <section class="header-menu">
+        <div class="header-menu-title-name">
+            <h1>Погода здесь</h1>
+        </div>
+        <div class="update-button-block">
+            <button onclick="updateCurrentGeolocation()" class="update-button">
+                <span class="text-refresh">Обновить геолокацию</span>
+                <img class="text-refresh-none" src="img/refresh.svg">
+            </button>
+        </div>
+    </section>
+</header>
+
+<main>
+    <section class="main-weather">
+        <div class="main-weather-city">
+            <h2 id="main-name"></h2>
+            <div id="main-weather-icon" class="main-weather-icon-block"></div>
+            <div id="main-weather-degree" class="main-weather-degree"></div>
+        </div>
+        <ul class="main-weather-info-list">
+            <li class="main-weather-info">
+                <div class="weather-info">Ветер</div>
+                <div id="weather-details-wind" class="weather-details"></div>
+            </li>
+            <li class="main-weather-info">
+                <div class="weather-info">Облачность</div>
+                <div id="weather-details-cloud" class="weather-details"></div>
+            </li>
+            <li class="main-weather-info">
+                <div class="weather-info">Давление</div>
+                <div id="weather-details-pressure" class="weather-details"></div>
+            </li>
+            <li class="main-weather-info">
+                <div class="weather-info">Влажность</div>
+                <div id="weather-details-humidity" class="weather-details"></div>
+            </li>
+            <li class="main-weather-info">
+                <div class="weather-info">Координаты</div>
+                <div id="weather-details-coordinates" class="weather-details"></div>
+            </li>
+        </ul>
+        <script src="app/main.js"></script>
+    </section>
+
+    <section class="main-menu">
+        <div class="main-menu-title-name">
+            <h3>Избранное</h3>
+        </div>
+        <div class="favourite-app">
+            <input id="#city-search" type="text" name="city-name" placeholder="Добавить новый город">
+            <div class="add-button-block"><button onclick="addCityByName()" class="add-button">+</button></div>
+        </div>
+    </section>
+
+    <section id="favourite-weather-cities" class="favourite-weather-cities">
+<!--        Тут все создается-->
+    </section>
+</main>
+<script src="app/localStorage.js"></script>
+<script src="app/favourite.js"></script>
+</body>
+</html>
